@@ -1,0 +1,20 @@
+{
+  "name": "iwa2-test2",
+  "version": "0.0.1",
+  "description": "my CA test for iwa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephaTech/iwa2-test2.git"
+  },
+  "author": "Steph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StephaTech/iwa2-test2/issues"
+  },
+  "homepage": "https://github.com/StephaTech/iwa2-test2#readme"
+}
