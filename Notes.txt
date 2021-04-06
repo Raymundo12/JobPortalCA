@@ -1,0 +1,42 @@
+source control git
++ sign
+type a message 
+commit
+click ...
+push
+thats it
+
+//start
+npm install -g nodemon
+
+//axios
+npm install -- save axios
+
+//morgan--> easy to debug and understand the API// morgan is the server  cors is cross side?
+npm i --save morgan cors
+
+//express --> is our router
+npm i --save express body-parser
+
+//TIPS CA
+PARAMETER FOR PASS NEW DISHES AS NAME AND PRICE
+const http = require('http');
+const axios = require('axios'),
+logger = require('morgan'),
+cors = require('cors'),
+express = require('express'),
+bodyParser = require('body-parser');
+
+var app = express();
+var port = 8000;
+
+app.use(bodyParser.json())//JSON
+
+//option 2 - setting routes and passing parameters
+app.get('/hello/:foo/:bar', (req, res) => {//type  on the browse exactly what you wrote here
+    res.json({message: "Hello yahh", data: [
+        req.params.foo,
+        req.params.bar
+    ]});
+});
+****************************************************************
