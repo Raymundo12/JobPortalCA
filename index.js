@@ -66,15 +66,24 @@ let users = [];//names of users will be stored here
     }
 }) ();
 
-mongoose.connect('mongodb://localhost/test');
+//old version
+// mongoose.connect('mongodb://localhost/test');
 
-mongoose.connection.on('error', (err) => {
-    console.log('Mongodb Error:', err);
-    process.exit();
-});
-mongoose.connection.on('connected', () => {
-    console.log('MongoDB is successfully connected');
-});
+// mongoose.connection.on('error', (err) => {
+//     console.log('Mongodb Error:', err);
+//     process.exit();
+// });
+// mongoose.connection.on('connected', () => {
+//     console.log('MongoDB is successfully connected');
+// });
+
+//new version
+const dbURI = "mongodb://localhost/test";
+
+mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true })
+    .then((result) => console.log('MongoDB is successfully connected'))
+    .catch((err) => console.log(err));
+
 
 app.listen(port, function(err){
     console.log('Listening on port: ' + port);

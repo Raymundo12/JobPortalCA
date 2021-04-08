@@ -51,8 +51,10 @@ app.get('/hello/:foo/:bar', (req, res) => {//type  on the browse exactly what yo
 *****Good structure-MVC****
 //routes folder in a separate files for work with n points-for works independently without change the main
 
-2021.03.09
+
 
 //mongo setup
 
 //https://27017-coral-rattlesnake-cbgz4v1g.ws-eu03.gitpod.io/
+
+2021.03.30

@@ -2,7 +2,9 @@ const express = require('express'),
 router = express.Router();
 
 //reference into routes from the request logic intem-controller
-var itemCtrl = require('./item-controller');
+var itemCtrl = require('./item-controller'),
+
+userCtrl = require('./user-controller');
 
 router.get('/hello', itemCtrl.getWorld);
 
