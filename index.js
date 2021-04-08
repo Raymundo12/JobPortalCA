@@ -1,3 +1,4 @@
+//dependencies,references
 const http = require('http');
 const axios = require('axios'),
 logger = require('morgan'),
@@ -64,6 +65,16 @@ let users = [];//names of users will be stored here
         console.log(error);
     }
 }) ();
+
+mongoose.connect('mongodb://localhost/test');
+
+mongoose.connection.on('error', (err) => {
+    console.log('Mongodb Error:', err);
+    process.exit();
+});
+mongoose.connection.on('connected', () => {
+    console.log('MongoDB is successfully connected');
+});
 
 app.listen(port, function(err){
     console.log('Listening on port: ' + port);
