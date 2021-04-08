@@ -17,13 +17,18 @@ app.use(bodyParser.json())//JSON
 //     //res.send(users.join('\n'));
 // });
 //**********************************************************************************
-//option 2 - setting routes and passing parameters
+//option 2 - setting routes and passing parameters//for put at the front end
 app.get('/hello/:foo/:bar', (req, res) => {//type  on the browse exactly what you wrote here
     res.json({message: "Hello yahh", data: [
         req.params.foo,
         req.params.bar
     ]});
 });
+
+//post using postman//sending some data
+app.post('/hello',(req,res) => {
+    res.json({result: 'Post was sent',data: req.body});
+})
 
 // http.createServer((req, res)=>{
 // //res.write("Hello world, Helo Steph you got it right this time!!!uhuuUu \n"); // write a response
