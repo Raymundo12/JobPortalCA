@@ -18,6 +18,14 @@ npm i --save morgan cors
 //express --> is our router
 npm i --save express body-parser
 
+*****or*****
+
+//install all in one line
+npm i --save http axios morgan cors express
+
+//KILL THE PORTS
+killall node
+
 //TIPS CA
 PARAMETER FOR PASS NEW DISHES AS NAME AND PRICE
 const http = require('http');

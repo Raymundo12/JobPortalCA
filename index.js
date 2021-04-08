@@ -9,6 +9,7 @@ var app = express();
 var port = 8000;
 
 app.use(bodyParser.json())//JSON
+app.use(logger('tiny'));//morgan//knows the n point: GET / 404 139 - 1.760 ms//POST /hello 200 126 - 1.586 ms
 
 // //option one setting routes
 // app.get('/hello', (req, res) => {//type  on the browse exactly what you wrote here
