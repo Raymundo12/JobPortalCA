@@ -1,11 +1,12 @@
 //dependencies,references
 const http = require('http');
-const axios = require('axios'),
-logger = require('morgan'),
-cors = require('cors'),
-express = require('express'),
+const axios = require('axios');
+logger = require('morgan');
+cors = require('cors');
+express = require('express');
 bodyParser = require('body-parser');
 mongoose = require('mongoose');
+multer = require('multer');
 
 var app = express();
 var port = 8000;

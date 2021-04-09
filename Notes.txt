@@ -57,4 +57,7 @@ app.get('/hello/:foo/:bar', (req, res) => {//type  on the browse exactly what yo
 
 //https://27017-coral-rattlesnake-cbgz4v1g.ws-eu03.gitpod.io/
 
+
 2021.03.30
+//multer
+npm i --save multer
