@@ -21,3 +21,13 @@ exports.getUsers = function(req, res) {
     res.json(users);
   }); 
 };
+
+//FIND USER
+exports.getUser = function(req, res) {
+  User.findOne({_id: req.params.id}, function (err, users) {//MQL CODE for find a single user
+    if (err) {
+      res.status(400).json(err); 
+    } 
+    res.json(users);
+  }); 
+};

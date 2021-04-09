@@ -12,6 +12,13 @@ router.get('/hello/:foo/:bar', itemCtrl.getWorldParams);
 
 router.post('/hello', itemCtrl.postWorld);
 
+router.post('/users', userCtrl.createUser);//CREATE
+router.get('/users', userCtrl.getUsers);//all
+router.get('/users/:id', userCtrl.getUser);//SINGLE USER
+//router.put('/users/:id', userCtrl.updateUser);//SINGLE USER
+// router.delete('/users/:id', userCtrl.deleteUser);
+
+
 //option 2 - setting routes and passing parameters//for put at the front end
 // router.get('/hello/:foo/:bar', (req, res) => {//type  on the browse exactly what you wrote here
 //     res.json({message: "Hello yahh", data: [
