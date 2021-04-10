@@ -8,13 +8,14 @@ bodyParser = require('body-parser');
 mongoose = require('mongoose');
 multer = require('multer');
 
+//INSTANCES listen and push
 var app = express();
-var port = 8000;
+var port = 8000;//port default
 
-//middllewares
-app.use(bodyParser.json())//JSON
+//MIDDLEWARES
+app.use(bodyParser.json())//JSON /first
 app.use(logger('tiny'));//morgan//knows the n point of requests and responses between the user and controller: GET / 404 139 - 1.760 ms//POST /hello 200 126 - 1.586 ms
-app.use(require('./routes'));
+app.use(require('./routes'));//last
 // //option one setting routes
 // app.get('/hello', (req, res) => {//type  on the browse exactly what you wrote here
 //     res.json({message: "Hello yahh" });//name=message value=Hello yahh
@@ -51,21 +52,21 @@ app.use(require('./routes'));
 // .catch(error=>{
 //     console.log(error);
 // });
-let users = [];//names of users will be stored here
-//let emails = [];
-(async function getNames(){//syncronized minimize the errors and delays
-    try{
-        //const {data} = await axios.get("https://jsonplaceholder.typicode.com/users");//external server
-        const {data} = await axios.get("https://swapi.dev/api/people/");//star wars //external server
+// let users = [];//names of users will be stored here
+// //let emails = [];
+// (async function getNames(){//syncronized minimize the errors and delays
+//     try{
+//         //const {data} = await axios.get("https://jsonplaceholder.typicode.com/users");//external server
+//         const {data} = await axios.get("https://swapi.dev/api/people/");//star wars //external server
 
 
-        //users = data.results.map(user=>user.name);//map=populate to the users
-        //emails = data.map(email=>email.email);//map=populate to the users
-       console.log(users)//print to the browser
-    }catch (error) {
-        console.log(error);
-    }
-}) ();
+//         //users = data.results.map(user=>user.name);//map=populate to the users
+//         //emails = data.map(email=>email.email);//map=populate to the users
+//        console.log(users)//print to the browser
+//     }catch (error) {
+//         console.log(error);
+//     }
+// }) ();
 
 //old version
 // mongoose.connect('mongodb://localhost/test');
@@ -79,7 +80,7 @@ let users = [];//names of users will be stored here
 // });
 
 //new version
-const dbURI = "mongodb://localhost/test";
+const dbURI = "mongodb://localhost/test";//connection 
 
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => console.log('MongoDB is successfully connected'))
@@ -87,5 +88,5 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true })
 
 
 app.listen(port, function(err){
-    console.log('Listening on port: ' + port);
+    console.log('Listening on port: ' + port);//print outuput por runner
 });

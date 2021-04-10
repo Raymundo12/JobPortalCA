@@ -18,6 +18,10 @@ router.get('/users/:id', userCtrl.getUser);//FIND USER BY id
 router.put('/users/:id', userCtrl.updateUser);//UPDATES USER BY id
 router.delete('/users/:id', userCtrl.deleteUser);//DELETE USER BY id
 
+module.exports.UPLOAD_PATH = "uploads";
+
+var multer = require("multer");
+var upload = multer({dest: module.express.UPLOAD_PATH});
 
 //option 2 - setting routes and passing parameters//for put at the front end
 // router.get('/hello/:foo/:bar', (req, res) => {//type  on the browse exactly what you wrote here
