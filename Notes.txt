@@ -61,3 +61,6 @@ app.get('/hello/:foo/:bar', (req, res) => {//type  on the browse exactly what yo
 2021.03.30 - 49:54
 //multer
 npm i --save multer
+
+//modules path, allows 
+npm i --save path fs del

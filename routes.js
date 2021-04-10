@@ -2,15 +2,15 @@ const express = require('express'),
 router = express.Router();
 
 //reference into routes from the request logic intem-controller
-var itemCtrl = require('./item-controller'),
+//var itemCtrl = require('./item-controller'),
 
 userCtrl = require('./user-controller');
 
-router.get('/hello', itemCtrl.getWorld);
+// router.get('/hello', itemCtrl.getWorld);
 
-router.get('/hello/:foo/:bar', itemCtrl.getWorldParams);
+// router.get('/hello/:foo/:bar', itemCtrl.getWorldParams);
 
-router.post('/hello', itemCtrl.postWorld);
+// router.post('/hello', itemCtrl.postWorld);
 
 router.post('/users', userCtrl.createUser);//CREATE USER
 router.get('/users', userCtrl.getUsers);//READ all
@@ -20,8 +20,8 @@ router.delete('/users/:id', userCtrl.deleteUser);//DELETE USER BY id
 
 module.exports.UPLOAD_PATH = "uploads";
 
-var multer = require("multer");
-var upload = multer({dest: module.express.UPLOAD_PATH});
+var multer = require("multer");//variable
+var upload = multer({dest: module.exports.UPLOAD_PATH});
 
 //option 2 - setting routes and passing parameters//for put at the front end
 // router.get('/hello/:foo/:bar', (req, res) => {//type  on the browse exactly what you wrote here
