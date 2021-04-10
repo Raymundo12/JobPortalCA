@@ -22,6 +22,11 @@ module.exports.UPLOAD_PATH = "uploads";
 
 var multer = require("multer");//variable
 var upload = multer({dest: module.exports.UPLOAD_PATH});
+var imageCtrl = require('./image-controller');
+
+router.post('/images',upload.single ('image'),imageCtrl.uploadImage);
+router.get('/images', imageCtrl.getImages);
+
 
 //option 2 - setting routes and passing parameters//for put at the front end
 // router.get('/hello/:foo/:bar', (req, res) => {//type  on the browse exactly what you wrote here
