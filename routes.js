@@ -18,6 +18,7 @@ router.get('/users/:id', userCtrl.getUser);//FIND USER BY id
 router.put('/users/:id', userCtrl.updateUser);//UPDATES USER BY id
 router.delete('/users/:id', userCtrl.deleteUser);//DELETE USER BY id
 
+
 module.exports.UPLOAD_PATH = "uploads";
 
 var multer = require("multer");//variable
@@ -26,6 +27,11 @@ var imageCtrl = require('./image-controller');
 
 router.post('/images',upload.single ('image'),imageCtrl.uploadImage);
 router.get('/images', imageCtrl.getImages);
+router.get('/images/:id', imageCtrl.getImage);
+//router.get('/images/:id', imageCtrl.deleteImage);
+router.delete('/images/:id', imageCtrl.deleteImage);
+
+
 
 
 //option 2 - setting routes and passing parameters//for put at the front end
