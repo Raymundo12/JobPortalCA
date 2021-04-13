@@ -5,6 +5,7 @@ path = require('path'),
 fs = require('fs'),
 del = require('del');
 
+//ADD A IMAGE
 exports.uploadImage = function(req,res)
 {
     let newImage = new Image();//instance of image
@@ -19,6 +20,7 @@ exports.uploadImage = function(req,res)
     });
 
 };
+//GET ALL IMAGES
 exports.getImages = function(req, res) {
     Image.find({}, '-__v')
     .lean()
@@ -35,6 +37,7 @@ exports.getImages = function(req, res) {
         res.json(images);
     });
 };
+//GET ONE IMAGE
 exports.getImage = function(req, res) {
     let imgId = req.params.id;
 
@@ -47,6 +50,7 @@ exports.getImage = function(req, res) {
         fs.createReadStream(path.join(UPLOAD_PATH, image.filename)).pipe(res);
     });
 };
+//DELETE IMAGE
 exports.deleteImage = function(req, res) {
     let imgId = req.params.id;
 

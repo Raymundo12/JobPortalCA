@@ -26,10 +26,9 @@ var upload = multer({dest: module.exports.UPLOAD_PATH});
 var imageCtrl = require('./image-controller');
 
 router.post('/images',upload.single ('image'),imageCtrl.uploadImage);
-router.get('/images', imageCtrl.getImages);
-router.get('/images/:id', imageCtrl.getImage);
-//router.get('/images/:id', imageCtrl.deleteImage);
-router.delete('/images/:id', imageCtrl.deleteImage);
+router.get('/images', imageCtrl.getImages);//READ all
+router.get('/images/:id', imageCtrl.getImage);//FIND image BY id
+router.delete('/images/:id', imageCtrl.deleteImage);//DELETE image BY id
 
 
 
