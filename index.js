@@ -1,13 +1,13 @@
 //dependencies,references
 const http = require('http');
-const axios = require('axios');
+//const axios = require('axios');
 logger = require('morgan');
 cors = require('cors');
 express = require('express');
 bodyParser = require('body-parser');
 mongoose = require('mongoose');
 multer = require('multer');
-//const dotenv = require('dotenv');
+const dotenv = require('dotenv');
 
 
 
@@ -15,7 +15,7 @@ multer = require('multer');
 //INSTANCES listen and push
 var app = express();
 var port = 8000;//port default
-//dotenv.config();
+dotenv.config();
 //MIDDLEWARES
 
 app.use(bodyParser.json())//JSON /first
@@ -85,14 +85,16 @@ app.use(require('./routes'));//last
 // });
 
 //new version
-const dbURI = "mongodb://localhost/test";//connection 
-//cosnt dbURI = process.env.DB_URL;
+//const dbURI = "";//connection 
+
+app.listen(port, function(err){
+    console.log('Listening on port: ' + port);//print outuput por runner
+});
+
+const dbURI = process.env.DB_URL;
 
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => console.log('MongoDB is successfully connected'))
     .catch((err) => console.log(err));
 
 
-app.listen(port, function(err){
-    console.log('Listening on port: ' + port);//print outuput por runner
-});
