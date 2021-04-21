@@ -2,7 +2,7 @@ const express = require('express'),
 router = express.Router();
 
 //reference into routes from the request logic intem-controller
-//var itemCtrl = require('./item-controller'),
+// var itemCtrl = require('./item-controller'),
 
 userCtrl = require('./user-controller');
 
@@ -10,9 +10,9 @@ userCtrl = require('./user-controller');
 
 // router.get('/hello/:foo/:bar', itemCtrl.getWorldParams);
 
-// router.post('/hello', itemCtrl.postWorld);
+//  router.post('/hello', itemCtrl.postWorld);
 
-router.post('/users', userCtrl.createUser);//CREATE USER
+router.post('/users', userCtrl.createUser);//create user
 router.get('/users', userCtrl.getUsers);//READ all
 router.get('/users/:id', userCtrl.getUser);//FIND USER BY id
 router.put('/users/:id', userCtrl.updateUser);//UPDATES USER BY id

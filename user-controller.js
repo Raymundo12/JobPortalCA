@@ -4,9 +4,9 @@ var User = require('./models/user')
 //CREATE/ADD A SINGLE USER
 exports.createUser = function(req, res) { 
     var newuser = new User(req.body);
-    newuser.save(function (err, user) { //SAVE
+    newuser.save(function (err, user) { 
         if (err) { 
-            res.status (400).json(err);
+            res.status (400).json({ error: error.details[0].message });
         }
 
         res.json(user); 

@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 
-//SCHEMA
 var userSchema = new mongoose.Schema({ 
-    email: { type: String, unique: true, lowercase: true},//special atributte//is the primary key
+    email: { type: String, unique: true, lowercase: true},
     password: String,
     username: String,
     gender: { 
@@ -11,8 +10,7 @@ var userSchema = new mongoose.Schema({
     },
     phone: Number 
 },
-    {timestamps: true}
-
+{ timestamps: true }
 );
 
 module.exports = mongoose.model('User', userSchema);
