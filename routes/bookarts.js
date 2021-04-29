@@ -1,15 +1,16 @@
 const express = require('express')
+const Book= require('../models/books')//books is where my schema is
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    res.send('In bookart')
+//this call view/bookart/new 
+router.get('/new', (req, res) => {
+    res.render('bookart/new', {part: new Book() })//book input is passed to the database collection model.
 })
 
-//this call view/bookart/new_item 
-router.get('/edit/:id', async (req, res) => {// defining new route to edit a car part.
-  const part = await Part.findById(req.params.id) // passing the user selected id to the database collection and the document is found using 
+router.get('/edit/:id', async (req, res) => {// defining new route to edit 
+  const part = await Book.findById(req.params.id) // passing the user selected id to the database collection and the document is found using 
   // id and render to the edit page all the user selected id's data.
-  res.render('carpart/edit_part', { part: part })
+  res.render('bookart/edit', { part: part })
 })
 
 module.exports = router
