@@ -9,9 +9,9 @@ mongoose = require('mongoose');
 multer = require('multer');
 const dotenv = require('dotenv');
 express = require('express');//const
-const Part = require('./models/bookartmodel')
+const Book= require('./models/books')//books is where my schema is
 
-const bookartRouter = require('./routes/bookarts')
+const bookartRouter = require('./routes/bookarts')//bookarts js class
 const methodOverride = require('method-override')// package used to update and delete a document via post request.
 
 //INSTANCES listen and push
@@ -21,7 +21,7 @@ var port = 8000;//port default
 dotenv.config();
 //MIDDLEWARES
 app.set('view engine', 'ejs')
-app.use('/bookarts', bookartRouter)
+app.use('/bookarts', bookartRouter)//bookarts js class import export
 
 
 
@@ -30,16 +30,16 @@ app.use(express.static('views/bookart')) // making my folder public to access my
 
 //html file homepage
 app.get('/', async  (req,res)=> {// making a get request
-   const parts = await Part.find();  // this will find all my data from my database collection with the help of model and assign it on to the const parts
+   const partsbooks = await Book.find();  // this will find all my data from my database collection with the help of model and assign it on to the const Book
 
-    res.render('bookart/index' , {items: items})// This will render all the database collection data which was assigned on to the const parts
+    res.render('bookart/index' , {partsbooks: partsbooks})// This will render all the database collection data which was assigned on to the const Book
 })
 
 // //Render html file homepage
 // app.get('/', async  (req,res)=> {// making a get request
-//    const parts = await Part.find();  // this will find all my data from my database collection with the help of model and assign it on to the const parts
+//    const Book = await Bookfind();  // this will find all my data from my database collection with the help of model and assign it on to the const Book
 
-//     res.render('bookart/index' , {parts: parts})// This will render all the database collection data which was assigned on to the const parts
+//     res.render('bookart/index' , {Book: Book})// This will render all the database collection data which was assigned on to the const Book
 // })
 
 app.use(bodyParser.json())//JSON /first

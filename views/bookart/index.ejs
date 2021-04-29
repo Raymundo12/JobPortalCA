@@ -29,18 +29,18 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
+                        <a class="nav-link" href="#Home">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About BLM BookShop</a>
+                        <a class="nav-link" href="#BookShop">About BLM BookShop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Where to find Audiobooks</a>
+                        <a class="nav-link" href="#Audiobooks">Where to find Audiobooks</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#Contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -59,11 +59,11 @@ And each and every document value is print out seperately.
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                 <h2 class="text-uppercase section-heading"> Products  </h2>
-                <p class="lead">Select a product from the below Options.</p>
+                 <h2 class="text-uppercase section-heading"> #Black Lives Matter Books  </h2>
+                <p class="lead">Select a book from the below Options.</p>
          
             </div>
-            <a href="/carparts/new" class="btn btn-success">New Parts</a>
+            <a href="/bookarts/new" class="btn btn-success">Add new books</a>
              <div class="col-lg-12 text-center"> <p> </p>   </div>
              
  
@@ -71,36 +71,36 @@ And each and every document value is print out seperately.
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>ManufacturerBook</th>
-                            <th>ModelPrice</th>
-                            <th>Part Name</th>
-                            <th>Price €</th>
+                            <th>Book</th>
+                            <th>Price€</th>
+                            <th>Award Name</th>
+                            <!--<th>Price €</th>-->
                           
-                            <th>Action</th>
+                            <th>Review Option</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!--  this are the data to be displayed from the database. Each and every document is caputred using a get request to the 
                         
                         database collection. And get request is passed into a schema and each value recieved is displayed one by one into the table on the appropriate column. -->
-                        <% parts.forEach(part => { %>
+                        <% partsbooks.forEach(part => { %>
                         <tr>
                             
-                            <td> <%= part.Manufacturer %> </td>
-                            <td> <%= part.Model %> </td>
-                            <td>  <%= part.Part %>  </td>
-                            <td> <%= part.Price %> </td>
+                            <td> <%= part.item %> </td>
+                            <td> <%= part.price %> </td>
+                            <td>  <%= part.name %>  </td>
+                           <!-- <td> <%= part.Price %> </td>-->
                 
                             <td>
                                <!--   this is button to edit a purticular record using id. When click take you to edit form page which populate all the data 
                             associated with the id. And we have to change only what we want to -->
-                                  <a href="/carparts/edit/<%= part.id %>"  >
+                                  <a href="/bookarts/edit/<%= part.id %>"  >
                                 <button class="btn btn-success" style="margin-left: 5px;" type="submit"><i class="fa fa-pencil" style="font-size: 15px;">
                                 </i></button>
                             </a>
                                 <!--   this is button to delete a purticular record using id which is linked to my api which sent a delete request.
                                 Which sents the data to backend via post. -->
-                                <form action="/carparts/<%= part.id %>?_method=DELETE" method="POST" class="d-inline"  >
+                                <form action="/bookarts/<%= part.id %>?_method=DELETE" method="POST" class="d-inline"  >
                                 <button class="btn btn-danger" style="margin-left: 5px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;">
                                 </i></button>
                                </form>
@@ -163,7 +163,7 @@ And each and every document value is print out seperately.
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/table.js"></script>
-    <script src="js/PaddysCafe.js"></script>
+    <script src="js/PaddysCafe.js"></script><!-- app.js or index.js -->
     <script>
     //     window.addEventListener("load", function() {
     //         document.forms[1].txtBillAmt.value = calculateBill('menuTable');
