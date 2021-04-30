@@ -17,7 +17,7 @@ const methodOverride = require('method-override')// package used to update and d
 //INSTANCES listen and push
 var app = express();
 app.use(express.urlencoded({ extended: false}))//enable us to use URL-encoded data with the querystring library.
-var port = 8000;//port default
+var port = process.env.PORT || 8000;//port default
 dotenv.config();
 //MIDDLEWARES
 app.set('view engine', 'ejs')

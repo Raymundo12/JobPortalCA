@@ -59,7 +59,7 @@ function saveBooktAndRedirect(path) { // this function is used to pass all the u
     part.name = req.body.name
     
     try {
-      part = await part.save() // everything is saved to the database collection
+      part = await part.save() // everything is saved to the Rest database collection
 
      res.redirect(`/#Audiobook`)// redirect user to the product page .
     } catch (e) {

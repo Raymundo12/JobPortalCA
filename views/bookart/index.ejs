@@ -74,32 +74,28 @@ And each and every document value is print out seperately.
                             <th>Book</th>
                             <th>Price€</th>
                             <th>Award Name</th>
-                            <!--<th>Price €</th>-->
-                          
                             <th>Review Option</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!--  this are the data to be displayed from the database. Each and every document is caputred using a get request to the 
                         
-                        database collection. And get request is passed into a schema and each value recieved is displayed one by one into the table on the appropriate column. -->
+                        database collection REST . And get request is passed into my bookschema and each value recieved is displayed one by one into the table on the appropriate column. -->
                         <% partsbooks.forEach(part => { %>
                         <tr>
                             
                             <td> <%= part.item %> </td>
                             <td> <%= part.price %> </td>
                             <td>  <%= part.name %>  </td>
-                           <!-- <td> <%= part.Price %> </td>-->
                 
                             <td>
-                               <!--   this is button to edit a purticular record using id. When click take you to edit form page which populate all the data 
-                            associated with the id. And we have to change only what we want to -->
+                                <!--   Calling my api/routes/bookarts/EDIT BACKEND via put. -->
+                            
                                   <a href="/bookarts/edit/<%= part.id %>"  >
                                 <button class="btn btn-success" style="margin-left: 5px;" type="submit"><i class="fa fa-pencil" style="font-size: 15px;">
                                 </i></button>
                             </a>
-                                <!--   this is button to delete a purticular record using id which is linked to my api which sent a delete request.
-                                Which sents the data to backend via post. -->
+                                <!--   Calling my api/routes/bookarts/DELETE BACKEND via post. -->
                                 <form action="/bookarts/<%= part.id %>?_method=DELETE" method="POST" class="d-inline"  >
                                 <button class="btn btn-danger" style="margin-left: 5px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;">
                                 </i></button>
@@ -162,7 +158,7 @@ And each and every document value is print out seperately.
     <!-- Bootstrap core JavaScript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="js/PaddysCafe.js"></script><!-- app.js or index.js -->
     <script>
     //     window.addEventListener("load", function() {
