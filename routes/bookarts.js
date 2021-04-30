@@ -1,7 +1,8 @@
 const express = require('express')
-const Book= require('../models/books')//books is where my schema is
+const Book = require('../models/books')//books is where my schema is
 const router = express.Router()
 
+//CRUD
 //this call view/bookart/new 
 router.get('/new', (req, res) => {
     res.render('bookart/new', {part: new Book() })//book input is passed to the database collection model.
@@ -23,8 +24,8 @@ router.get('/:id', async (req, res) => {// getting a car part details from datab
    
 })
 
-// creating new record.
-// post is used to create a new record with the information submited in the user in the form.
+// CREATE BOOK.
+
 router.post('/', async (req, res, next) => {
   req.part = new Book() // this is passed on to the database schema and new record is created.
   next()
@@ -40,16 +41,12 @@ router.put('/:id', async (req, res, next) => {
 }, saveBooktAndRedirect('edit')) // calling the function to edit the document
 
 
-
-
 //delete request is used to deleted a document
 router.delete('/:id', async (req, res)=> {  // getting the document id from the user
     await Book.findByIdAndDelete(req.params.id)// finding the document and deleting the document from the collection
   res.redirect('/#Audiobook')// rediricting the user to products page.
 
-
 })
-
 
 function saveBooktAndRedirect(path) { // this function is used to pass all the user input to schema to create/ update
   return async (req, res) => {
@@ -68,10 +65,6 @@ function saveBooktAndRedirect(path) { // this function is used to pass all the u
     }
   }
 }
-
-
-
-
 
 
 module.exports = router
