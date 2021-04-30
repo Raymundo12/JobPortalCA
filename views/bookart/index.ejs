@@ -62,8 +62,7 @@ And each and every document value is print out seperately.
                  <h2 class="text-uppercase section-heading"> #Black Lives Matter Books  </h2>
                 <p class="lead">Select a book from the below Options.</p>
          
-            </div>
-            <a href="/bookarts/new" class="btn btn-success">Add new books</a>
+            <a href="/bookarts/new" class="btn btn-dark">Add new books</a>
              <div class="col-lg-12 text-center"> <p> </p>   </div>
              
  
@@ -73,8 +72,8 @@ And each and every document value is print out seperately.
                         <tr>
                             <th>Book</th>
                             <th>Price€</th>
-                            <th>Award Name</th>
-                            <th>Review Option</th>
+                            <th>Award Category</th>
+                            <th>Review</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -92,12 +91,12 @@ And each and every document value is print out seperately.
                                 <!--   Calling my api/routes/bookarts/EDIT BACKEND via put. -->
                             
                                   <a href="/bookarts/edit/<%= part.id %>"  >
-                                <button class="btn btn-success" style="margin-left: 5px;" type="submit"><i class="fa fa-pencil" style="font-size: 15px;">
+                                <button class="btn btn-warning" style="margin-left: 5px;" type="submit"><i class="fa fa-pencil"  style="font-size: 15px;">edit
                                 </i></button>
                             </a>
                                 <!--   Calling my api/routes/bookarts/DELETE BACKEND via post. -->
-                                <form action="/bookarts/<%= part.id %>?_method=DELETE" method="POST" class="d-inline"  >
-                                <button class="btn btn-danger" style="margin-left: 5px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;">
+                                <form action="/bookarts/<%= part.id %>?_omethod=DELETE" method="POST" class="d-inline"  >
+                                <button class="btn btn-danger" style="margin-left: 5px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;">delete
                                 </i></button>
                                </form>
                             </td>
@@ -106,6 +105,7 @@ And each and every document value is print out seperately.
                     </tbody>
                 </table>
             </div>
+
 
          
         </div>
