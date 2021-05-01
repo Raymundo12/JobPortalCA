@@ -1,3 +1,4 @@
+//his is my model data representing my collection in mongo atlas called books..and the fields below will be generated automatically
 var mongoose = require('mongoose');
 
 var bookSchema = new mongoose.Schema({ 
@@ -9,4 +10,4 @@ var bookSchema = new mongoose.Schema({
 { timestamps: true }
 );
 
-module.exports = mongoose.model('books', bookSchema);//'books create a table inside mongo atlas and push my bookSchema recorded);
+module.exports = mongoose.model('books', bookSchema);//'books create a table inside mongo atlas and push my bookSchema retrieved);
