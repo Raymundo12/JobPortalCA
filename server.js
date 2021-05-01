@@ -1,3 +1,8 @@
+/*Part of the code has been sourcedand instructured from 
+Title: moodle live classes
+Author:Mikhael
+ title: How To Build A Markdown Blog Using Node.js, Express, And MongoDB 
+Author: Web Dev Simplified Availability: https://www.youtube.com/watch?v=1NrHkjlWVhM*/
 //dependencies,references
 const http = require('http');
 //const axios = require('axios');
@@ -25,11 +30,11 @@ app.use('/bookarts', bookartRouter)//bookarts js class import export
 
 
 
-app.use(express.static('views/bookart')) // making my folder public to access my css and javascript for my html page.
+app.use(express.static('views/bookart')) // express static makes my folder public to access my css and javascript for my html page.
 
-//html file homepage
-app.get('/', async  (req,res)=> {// making a get request
-   const partsbooks = await Book.find();  // this will find all my data from my database collection with the help of model and assign it on to the const Book
+//making a get request html page
+app.get('/', async  (req,res)=> {
+   const partsbooks = await Book.find();  // find my data from my REST database collection with the model and assign it on to the const Book
 
     res.render('bookart/index' , {partsbooks: partsbooks})// This will render all the database collection data which was assigned on to the const Book
 })
@@ -40,12 +45,12 @@ app.use(logger('tiny'));//morgan//knows the n point of requests and responses be
 
 
 app.listen(port, function(err){
-    console.log('Listening on port: ' + port);//print outuput por runner
+    console.log('Listening on port: ' + port);//my listening
 });
 
 const dbURI = process.env.DB_URL;
 
-mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true })//for avoid the deprecation Warning at the terminal
     .then((result) => console.log('MongoDB is successfully connected'))
     .catch((err) => console.log(err));
 
