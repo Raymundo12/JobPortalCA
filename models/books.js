@@ -10,4 +10,4 @@ var bookSchema = new mongoose.Schema({
 { timestamps: true }
 );
 
-module.exports = mongoose.model('books', bookSchema);//'books create a table inside mongo atlas and push my bookSchema retrieved);
+module.exports = mongoose.model('books', bookSchema);//important 'books creates a table inside mongo atlas and push my bookSchema retrieved);
