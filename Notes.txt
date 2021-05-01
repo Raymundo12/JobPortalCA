@@ -1,1 +1,12 @@
 //To run this app type-> node server.js
+
+//if necessary install a package is possible install at once
+npm i morgan cors express nodemon method-override dotenv mongodb
+
+//if the port to listen the request do not work change the number at class server.js
+8000 change to 8080
+
+//gitignore
+ignore or clean cache/node modules/.env
+
+
