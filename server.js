@@ -10,11 +10,12 @@ const dotenv = require('dotenv');
 express = require('express');//const
 const Book = require('./models/books')//books is where my schema is
 
+var app = express();
 const bookartRouter = require('./routes/bookarts')//bookarts js class
 const methodOverride = require('method-override')// package used to update and delete a document via post request.
+app.use(methodOverride('_omethod'))// using the method in the app.//edit class/ delete function
 
 //INSTANCES listen and push
-var app = express();
 app.use(express.urlencoded({ extended: false}))//enable us to use URL-encoded data with the querystring library.
 var port = process.env.PORT || 8000;//port default
 dotenv.config();
@@ -24,7 +25,6 @@ app.use('/bookarts', bookartRouter)//bookarts js class import export
 
 
 
-app.use(methodOverride('_omethod'))// using the method in the app.//edit class/ delete function
 app.use(express.static('views/bookart')) // making my folder public to access my css and javascript for my html page.
 
 //html file homepage
