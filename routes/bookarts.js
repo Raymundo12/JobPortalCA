@@ -44,7 +44,7 @@ router.put('/:id', async (req, res, next) => {
 //delete request is used to deleted a document
 router.delete('/:id', async (req, res)=> {  // getting the document id from the user
     await Book.findByIdAndDelete(req.params.id)// finding the document and deleting the document from the collection
-  res.redirect('/#Audiobook')// rediricting the user to products page.
+    res.redirect('/#Audiobook')// rediricting the user to products page.
 
 })
 
