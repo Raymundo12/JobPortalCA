@@ -1,20 +1,22 @@
+<!--the following code  has been sourced from title: How To Build A Markdown Blog Using Node.js, Express, And MongoDB 
+Author: Web Dev Simplified Availability: https://www.youtube.com/watch?v=1NrHkjlWVhM-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    
+  <!--  html form code when you click to add new book...will call my form to get user input to create a new document -->
 
   <title>BLM Book Shop</title>
 </head>
 <body>
-    <!--  this is the html form code to add new part to the collection     -->
+    
   <div class="container">
    <h3 >  New Book   </h3>
-<!--  this is a form used to get user input to create a new document  and form is sent using post.
-and is redirected to the appropriated url which is /carparts to pass this values to the post request and thus creating in new document.   -->
-    <form action="/bookarts" method="POST"><!-- CALL MY FOLDER ROUTES ROUTER.POST      -->
-        <!--  this is a code to bring html form code to the current page. like a import.       -->
+    <form action="/bookarts" method="POST"><!-- CALL MY FOLDER ROUTES       -->
+        
   <%- include('_formbook_fields') %><!--  USING THIS STATEMENT RENDER THE HTML IN FORM FIELD      -->
     </form>
   </div>

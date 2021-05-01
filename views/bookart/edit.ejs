@@ -1,4 +1,6 @@
-<!--      html code used to edit a car part               -->
+
+<!--the following code  has been sourced from title: How To Build A Markdown Blog Using Node.js, Express, And MongoDB 
+Author: Web Dev Simplified Availability: https://www.youtube.com/watch?v=1NrHkjlWVhM-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +14,9 @@
   <div class="container">
    <h3 >  Edit Book   </h3>
 
-    <form action="/bookarts/<%= part.id %>?_omethod=PUT" method="POST"> <!--     making a post request to update a document according to user new changes.          -->
+    <form action="/bookarts/<%= part.id %>?_omethod=PUT" method="POST"> <!--part of the CRUD making a post request to update -->
   <%- include('_formbook_fields') %>  
-<!--     calling the form field file           -->
+<!--calling the form field file-->
     </form>
   </div>
 
