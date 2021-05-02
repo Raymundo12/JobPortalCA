@@ -17,7 +17,6 @@
     "url": "https://github.com/StephaTech/iwa2-test2/issues"
   },
   "homepage": "https://github.com/StephaTech/iwa2-test2#readme",
-  
   "dependencies": {
     "-": "0.0.1",
     "axios": "^0.21.1",
